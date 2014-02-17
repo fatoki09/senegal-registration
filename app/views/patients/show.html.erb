@@ -1,0 +1,13 @@
+<%= link_to 'All Patients', patients_path %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @patient.name %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @patient.text %>
+</p>
+
+<td><%= link_to 'Edit', edit_patient_path %></td>
