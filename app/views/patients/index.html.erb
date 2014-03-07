@@ -1,19 +1,34 @@
-<%= link_to 'New Patient', new_patient_path %>
+<div class="container-fluid">
 
-<h1>All Patients</h1>
+  <h1>All Patients</h1>
+
+
+          <a href="/patients">All Patients</a></li>
+          <a href="/patients/new">New Patient</a></li>
+
+  <br><br>
  
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Text</th>
-  </tr>
- 
-  <% @patients.each do |patient| %>
-    <tr>
-      <td><%= link_to patient.name, patient %></td>
-      <td><%= link_to patient.text, patient %></td>
-      <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
-      <td><%= link_to 'Destroy', patient_path(patient), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
-</table>
+<div>
+      <table class="table table-striped table-bordered">
+          <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone Number</th>
+            <th>Edit Patient</th>
+            <th>Delete Patient</th>
+          </tr>
+
+            <tbody>
+                  <tr>
+                    <% @patients.each do |patient| %>
+                      <td class="table-hover"><%= link_to patient.name, patient %></td>
+                      <td class="table-hover"><%= link_to patient.address, patient %></td>
+                      <td class="table-hover"><%= link_to patient.phone_number, patient %></td>
+                      <td><%= link_to 'Edit', edit_patient_path(patient), :class => "btn btn-primary" %></td>
+                      <td><%= link_to 'Destroy', patient_path(patient), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>   
+                  </tr> 
+                  <% end %>
+              </tbody>
+        </table>
+    </div> 
+  </div>

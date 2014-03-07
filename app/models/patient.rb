@@ -1,3 +1,4 @@
 class Patient < ActiveRecord::Base
-	validates :name, presence: true
+	validates :name, :address, :phone_number, presence: true
+	
 end

@@ -8,6 +8,7 @@ SenegalRegistration::Application.routes.draw do
 
   resources :patients
 
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

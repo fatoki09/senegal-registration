@@ -1,4 +1,5 @@
-<%= form_for @patient do |f| %>
+<div class="container">
+<%= form_for(@patient, :html => { :class => "grid-form"} ) do |f| %>
 	 <% if @patient.errors.any? %>
 	  <div id="error_explanation">
 	    <h2><%= pluralize(@patient.errors.count, "error") %> prohibited
@@ -10,17 +11,59 @@
 	    </ul>
 	  </div>
   <% end %>
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>
+<br>
+  <fieldset>
+    <div data-row-span="1">
+      <div data-field-span="1">
+        <p>
+          <%= f.label :name %><br>
+          <%= f.text_field :name %>
+        </p>
+      </div>
+    </div>
+     
+     <div data-row-span="1">
+      <div data-field-span="1">
+        <p>
+          <%= f.label :address %><br>
+          <%= f.text_area :address %>
+        </p>
+      </div>
+    </div>
+
+    <div data-row-span="1">
+      <div data-field-span="1">
+        <p>
+          <%= f.label :phone_number %><br>
+          <%= f.text_field :phone_number %>
+        </p>
+      </div>
+    </div>
+
+   <!--  <div class="padding" data-row-span="1">
+      <div data-field-span="1">
+        <p>
+          <label><input type="checkbox">Interested</label>
+        </p>
+      </div>
+    </div> -->
+
+    <div class="form-group">
+    <div class="col-md-4">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> <h3>Interested in learning about the Church?</h3>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  </fieldset>
+
+  <br><br>
  
   <p>
-    <%= f.label :text %><br>
-    <%= f.text_area :text %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
+    <%= f.submit :class => "btn btn-success" %>
   </p>
 <% end %>
+</div>

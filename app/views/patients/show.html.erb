@@ -6,8 +6,18 @@
 </p>
  
 <p>
-  <strong>Text:</strong>
-  <%= @patient.text %>
+  <strong>Address:</strong>
+  <%= @patient.address %>
+</p>
+
+<p>
+  <strong>Phone Number:</strong>
+  <%= @patient.phone_number %>
+</p>
+
+<p>
+  <strong>Interested in learning more about the Church?</strong>
+  <%= human_boolean(@patient.interested) %>
 </p>
 
 <td><%= link_to 'Edit', edit_patient_path %></td>
